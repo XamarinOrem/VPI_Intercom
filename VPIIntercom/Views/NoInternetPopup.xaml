@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:VPIXamarinIntercom.CustomControls"
+              xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="VPIIntercom.Views.NoInternetPopup">
+    <StackLayout BackgroundColor="Transparent" Padding="25">
+        <StackLayout BackgroundColor="#323232" HorizontalOptions="CenterAndExpand" Spacing="10" VerticalOptions="CenterAndExpand" Padding="15" Margin="0">
+            <Label Text="Falha ao conector" FontSize="25" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" TextColor="White"
+                   FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"/>
+
+            <custom:CustomLabel Text="Houve um erro ao tentar conectar. Favor verifique sua internet, login ou senha e tente novamente." FontSize="Medium" LineSpacing="1.5" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" TextColor="#a3a1a0"
+                   FontFamily="FaktProBlond" StyleId="FaktProBlond"/>
+
+            <Button Text="OK" TextColor="#ff7824" BackgroundColor="Transparent" BorderRadius="0" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </StackLayout>
+</pages:PopupPage>

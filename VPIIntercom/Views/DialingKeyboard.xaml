@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:custom="clr-namespace:VPIXamarinIntercom.CustomControls"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="VPIIntercom.Views.DialingKeyboard">
+    <ScrollView>
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout Padding="0,10,0,10" BackgroundColor="Transparent" Spacing="10">
+
+                    <Label FontFamily="FaktProSemiBold" FontAttributes="Bold" StyleId="FaktProSemiBold" FontSize="Medium" Margin="0,10,0,20"
+                       TextColor="#ff7824" Text="VPI TJ1000" HorizontalOptions="Center"></Label>
+
+                    <Label FontFamily="FaktProSemiBold" FontAttributes="Bold" StyleId="FaktProSemiBold" FontSize="25" Margin="0,0,0,20"
+                       TextColor="#ff7824" x:Name="buildingName" HorizontalOptions="CenterAndExpand"></Label>
+
+                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Center" Margin="20,0,20,0"
+                                  x:Name="placeholderLabel"   VerticalOptions="StartAndExpand" FontSize="Medium"
+                       Text="Digite o número do apartamento ou portaria"
+                       TextColor="White" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"></Label>
+
+                    <Grid Margin="20,0,20,0" ColumnSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="30"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <custom:CustomEntry1  BackgroundColor="Transparent" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center"
+                                        VerticalOptions="StartAndExpand" x:Name="dialingTextEntry" IsVisible="False"
+                                            FontSize="40" PlaceholderColor="White"
+                       TextColor="White" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                            TextChanged="dialingTextEntry_TextChanged">
+
+                        </custom:CustomEntry1>
+                        <Image Source="ic_backspace.png" IsVisible="False" Grid.Row="0" Grid.Column="1"
+                               HorizontalOptions="EndAndExpand" HeightRequest="30" 
+                               WidthRequest="30" x:Name="backspaceBtn">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Back_Space_Tapped"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+
+                    <Grid RowSpacing="20" Margin="20,10,20,0" ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <custom:CustomButton x:Name="btn1" TextColor="White" Grid.Row="0" Grid.Column="0" HorizontalOptions="EndAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2" BorderColor="White" Text="1" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"></custom:CustomButton>
+
+                        <custom:CustomButton x:Name="btn2" TextColor="White" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2" BorderColor="White" Text="2" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"></custom:CustomButton>
+
+                        <custom:CustomButton x:Name="btn3" TextColor="White" Grid.Row="0" Grid.Column="2" HorizontalOptions="StartAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2" BorderColor="White" Text="3" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"></custom:CustomButton>
+
+                        <custom:CustomButton x:Name="btn4" TextColor="White" Grid.Row="1" Grid.Column="0" HorizontalOptions="EndAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2" BorderColor="White" Text="4" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"></custom:CustomButton>
+
+                        <custom:CustomButton x:Name="btn5" TextColor="White" Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2" BorderColor="White" Text="5" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"></custom:CustomButton>
+
+                        <custom:CustomButton x:Name="btn6" TextColor="White" Grid.Row="1" Grid.Column="2" HorizontalOptions="StartAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2" BorderColor="White" Text="6" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"></custom:CustomButton>
+
+                        <custom:CustomButton x:Name="btn7" TextColor="White" Grid.Row="2" Grid.Column="0" HorizontalOptions="EndAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2" BorderColor="White" Text="7" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"></custom:CustomButton>
+
+                        <custom:CustomButton x:Name="btn8" TextColor="White" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2" BorderColor="White" Text="8" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"></custom:CustomButton>
+
+                        <custom:CustomButton x:Name="btn9" TextColor="White" Grid.Row="2" Grid.Column="2" HorizontalOptions="StartAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2" BorderColor="White" Text="9" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"></custom:CustomButton>
+
+                    </Grid>
+
+                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="15,10,15,0">
+                        <Grid BackgroundColor="Transparent" Padding="0" 
+                                          VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="ic_button_red.png" Aspect="Fill" Grid.Column="0" Grid.Row="0"></Image>
+
+                            <Button TextColor="White"  Text="ANULAR" 
+                                        BackgroundColor="Transparent" BorderRadius="30"
+                                 FontFamily="FaktProBlond" StyleId="FaktProBlond" Grid.Column="0" Grid.Row="0" Clicked="Cancel_Btn_Tapped"></Button>
+
+                        </Grid>
+
+                        <custom:CustomButton x:Name="btn10" TextColor="White" Margin="0,0,0,0" HorizontalOptions="CenterAndExpand" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"
+                                BackgroundColor="Transparent" FontSize="25" Pressed="Keypad_Button_Clicked" Released="Keypad_Button_Released"
+                                WidthRequest="60" HeightRequest="60" BorderRadius="50" BorderWidth="2"
+                                BorderColor="White" Text="0"></custom:CustomButton>
+
+                        <Grid BackgroundColor="Transparent" 
+                                          VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="ic_button_blue.png" Aspect="Fill" Grid.Column="0" Grid.Row="0"></Image>
+
+                            <Button TextColor="White"  Grid.Column="0" Grid.Row="0" Text="PORTARIA"
+                                                BackgroundColor="Transparent" BorderRadius="30"
+                                FontFamily="FaktProBlond" StyleId="FaktProBlond"></Button>
+                        </Grid>
+                    </StackLayout>
+
+
+                </StackLayout>
+            </StackLayout>
+
+            <Grid Padding="40,0,40,0" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="ic_green_button.png" Grid.Column="0" Grid.Row="0"></Image>
+
+                <Button FontFamily="FaktProSemiBold"
+                    StyleId="FaktProSemiBold" TextColor="White" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent"
+                    FontSize="Medium"
+                    Text="CHAMAR" WidthRequest="180" BorderRadius="25" FontAttributes="Bold" Clicked="CHAMAR_Button_Clicked"></Button>
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

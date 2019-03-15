@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:VPIXamarinIntercom.CustomControls"
+             x:Class="VPIIntercom.Views.AddConfiguration">
+    <ScrollView>
+        <StackLayout Padding="20,15,25,20" Spacing="10">
+            <StackLayout x:Name="mainLayout">
+            <Label FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold" FontSize="40"
+                       TextColor="#ff7824" Text="VPI TJ1000"></Label>
+
+            <Label FontFamily="FaktProBlond" StyleId="FaktProBlond" FontSize="Small" Margin="0,20,0,0"
+                       TextColor="White" Text="Nome do condomínio:"></Label>
+
+            <Frame CornerRadius="8" x:Name="frame1" BackgroundColor="Transparent" OutlineColor="#ff7824" HasShadow="False" Padding="0">
+                <custom:CustomEntry  BackgroundColor="Transparent" TextColor="White" FontFamily="FaktProBlond"  StyleId="FaktProBlond" 
+                                     Placeholder="Digite o nome do condomínio" FontSize="Medium"
+                   PlaceholderColor="White" x:Name="txtEntry" TextChanged="txtEntry_TextChanged">
+                    <custom:CustomEntry.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS">40</On>
+                            <On Platform="Android">50</On>
+                        </OnPlatform>
+                    </custom:CustomEntry.HeightRequest>
+                </custom:CustomEntry>
+            </Frame>
+
+            <Label FontFamily="FaktProBlond" StyleId="FaktProBlond" FontSize="Small"
+                       TextColor="#ff0000" Text="Campo obrigatório." x:Name="errorMsg" IsVisible="False"></Label>
+
+            <Label FontFamily="FaktProBlond" StyleId="FaktProBlond" FontSize="Small"
+                       TextColor="White" Text="Login:"></Label>
+
+            <Frame CornerRadius="8" x:Name="frame2" BackgroundColor="Transparent" OutlineColor="#ff7824" HasShadow="False" Padding="0">
+
+                <custom:CustomEntry  BackgroundColor="Transparent" FontFamily="FaktProBlond"  StyleId="FaktProBlond"
+                   TextColor="White" Placeholder="Digite o login" Text="0" FontSize="Medium" TextChanged="txtEntry1_TextChanged"
+                   PlaceholderColor="White" x:Name="txtEntry1">
+                    <custom:CustomEntry.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS">40</On>
+                            <On Platform="Android">50</On>
+                        </OnPlatform>
+                    </custom:CustomEntry.HeightRequest>
+                </custom:CustomEntry>
+            </Frame>
+
+            <Label FontFamily="FaktProBlond" StyleId="FaktProBlond" FontSize="Small"
+                       TextColor="#ff0000" Text="Campo obrigatório." x:Name="errorMsg1" IsVisible="False"></Label>
+
+            <Label FontFamily="FaktProBlond" StyleId="FaktProBlond" FontSize="Small"
+                       TextColor="White" Text="Senha:"></Label>
+
+            <Frame CornerRadius="8" x:Name="frame3" BackgroundColor="Transparent" OutlineColor="#ff7824" HasShadow="False" Padding="0">
+
+                <custom:CustomEntry  BackgroundColor="Transparent" FontFamily="FaktProBlond"  StyleId="FaktProBlond"
+                   TextColor="White" Placeholder="Digite a senha" IsPassword="True" FontSize="Medium" TextChanged="txtEntry2_TextChanged"
+                   PlaceholderColor="White" x:Name="txtEntry2">
+                    <custom:CustomEntry.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS">40</On>
+                            <On Platform="Android">50</On>
+                        </OnPlatform>
+                    </custom:CustomEntry.HeightRequest>
+                </custom:CustomEntry>
+            </Frame>
+
+            <Label FontFamily="FaktProBlond" StyleId="FaktProBlond" FontSize="Small"
+                       TextColor="#ff0000" Text="Campo obrigatório." x:Name="errorMsg2" IsVisible="False"></Label>
+
+            <Label FontFamily="FaktProBlond" StyleId="FaktProBlond" FontSize="Small"
+                       TextColor="White" Text="Endereço do servidor:"></Label>
+
+            <Frame CornerRadius="8" x:Name="frame4" BackgroundColor="Transparent" OutlineColor="#ff7824" HasShadow="False" Padding="0">
+
+                <custom:CustomEntry  BackgroundColor="Transparent" FontFamily="FaktProBlond"  StyleId="FaktProBlond"
+                   TextColor="White" Placeholder="Digite o endereço" FontSize="Medium" TextChanged="txtEntry3_TextChanged"
+                   PlaceholderColor="White" x:Name="txtEntry3">
+                    <custom:CustomEntry.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="iOS">40</On>
+                            <On Platform="Android">50</On>
+                        </OnPlatform>
+                    </custom:CustomEntry.HeightRequest>
+                </custom:CustomEntry>
+            </Frame>
+
+            <Label FontFamily="FaktProBlond" StyleId="FaktProBlond" FontSize="Small"
+                       TextColor="#ff0000" Text="Campo obrigatório." x:Name="errorMsg3" IsVisible="False"></Label>
+
+                </StackLayout>
+            <StackLayout x:Name="apartmentLayout" IsVisible="false" Orientation="Horizontal" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Padding="0,20,0,0">
+                <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="StartAndExpand">
+                    <Image HeightRequest="20" WidthRequest="20" Source="ic_radio_button_unselected.png" x:Name="firstBtn">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Call_Keyboard_Tapped"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start"
+                       Text="Discagem" FontSize="Small"
+                       TextColor="White" FontFamily="FaktProBlond" StyleId="FaktProBlond">
+                    </Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="15" HorizontalOptions="EndAndExpand">
+                    <Image HeightRequest="20" WidthRequest="20" Source="ic_radio_button_unselected.png" x:Name="secondBtn">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Apartment_List_Tapped"></TapGestureRecognizer>
+                        </Image.GestureRecognizers>
+                    </Image>
+
+                    <Label HorizontalOptions="Start" HorizontalTextAlignment="Start" VerticalOptions="Start"
+                       Text="Apartamentos" FontSize="Small"
+                       TextColor="White" FontFamily="FaktProBlond" StyleId="FaktProBlond">
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+            <Grid x:Name="connectGrid" Margin="0,30,0,0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Source="ic_button_orange.png" Grid.Column="0" Grid.Row="0"></Image>
+
+                <Button FontFamily="FaktProSemiBold" Grid.Row="0" Grid.Column="0" StyleId="FaktProSemiBold"
+                  TextColor="White" BackgroundColor="Transparent" FontSize="Medium"
+                    Text="CONECTAR" WidthRequest="180" BorderRadius="25" FontAttributes="Bold" x:Name="loginBtn"
+                            Clicked="loginBtn_Clicked"></Button>
+            </Grid>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

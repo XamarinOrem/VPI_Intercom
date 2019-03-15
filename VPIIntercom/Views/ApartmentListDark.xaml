@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:VPIXamarinIntercom.CustomControls"
+             xmlns:list="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             x:Class="VPIIntercom.Views.ApartmentListDark">
+    <ContentPage.Content>
+        <StackLayout Padding="10" BackgroundColor="Transparent" Spacing="10">
+
+            <Label FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold" FontAttributes="Bold" FontSize="Medium" Margin="0,10,0,10"
+                       TextColor="#ff7824" Text="VPI TJ1000" HorizontalOptions="Center"></Label>
+
+            <Label FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold" FontAttributes="Bold" FontSize="25" Margin="0,0,0,10"
+                       TextColor="#ff7824" x:Name="buildingName" HorizontalOptions="CenterAndExpand"></Label>
+
+            <ContentView IsVisible="False" x:Name="NoInternet" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <StackLayout BackgroundColor="Transparent" Padding="10" Spacing="10">
+                        <Image Source="nointernet.png" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="250" Margin="0,10,0,0"></Image>
+                        <Label Text="Sem conexão" TextColor="White" FontSize="30" HorizontalOptions="Center" VerticalOptions="Start" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"></Label>
+                        <custom:CustomLabel TextColor="White" Text="Nenhuma conexão com a Internet encontrada, verifique sua conexão e tente novamente." FontSize="Small" HorizontalOptions="StartAndExpand" LineSpacing="1.2"
+                           VerticalOptions="Start" HorizontalTextAlignment="Center" FontFamily="FaktProBlond" StyleId="FaktProBlond"></custom:CustomLabel>
+                        <Button FontFamily="FaktProSemiBold"  StyleId="FaktProSemiBold" Margin="0,10,0,0"
+                    HorizontalOptions="Center"  TextColor="White" BackgroundColor="#3A990F"
+                    Text="TENTE NOVAMENTE" FontSize="Small" WidthRequest="180" HeightRequest="50"
+                        FontAttributes="Bold" BorderRadius="15" Clicked="Try_Again_Button_Clicked"></Button>
+                    </StackLayout>
+                </ContentView>
+
+                <ContentView x:Name="NoData" BackgroundColor="Transparent" IsVisible="False"
+                             HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <StackLayout BackgroundColor="Transparent" Padding="10" Spacing="10">
+                        <Image Source="nodata.png" VerticalOptions="Start" HorizontalOptions="Center" HeightRequest="250" Margin="0,30,0,0"></Image>
+                        <custom:CustomLabel LineSpacing="1.2" TextColor="White" Text="Atualmente, nenhum dado presente" FontSize="Medium" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" 
+                           VerticalOptions="Center" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"></custom:CustomLabel>
+                    </StackLayout>
+                </ContentView>
+
+             <ContentView IsVisible="False" x:Name="LoadData" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
+                <StackLayout BackgroundColor="Transparent" Padding="10" Spacing="10">
+                    <Image Source="loaddata.png" VerticalOptions="Start" HorizontalOptions="Center" HeightRequest="200" Margin="0,30,0,0"></Image>
+                    <custom:CustomLabel TextColor="White" Margin="20,0,20,0" LineSpacing="1.2" Text="Por favor espere, estamos recebendo dados" FontSize="Medium" HorizontalOptions="StartAndExpand" 
+                           VerticalOptions="Start" HorizontalTextAlignment="Center" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold"></custom:CustomLabel>
+                </StackLayout>
+            </ContentView>
+            
+            <list:FlowListView BackgroundColor="Transparent" FlowColumnCount="3" x:Name="apartmentListView"
+                   HasUnevenRows="True" SeparatorVisibility="None" FlowItemsSource="{Binding ApartmentList}" FlowItemTapped="apartmentListView_FlowItemTapped">
+                <list:FlowListView.FlowColumnTemplate>
+                    <DataTemplate>
+                        <list:FlowViewCell>
+                            <Grid x:Name="Item" ColumnSpacing="0" Padding="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Padding="8,8,8,8" BackgroundColor="Transparent">
+                                    <Frame BackgroundColor="#6b576b" OutlineColor="#6b576b" HasShadow="False"
+                                           Padding="10" CornerRadius="10" HeightRequest="80">
+                                        <StackLayout Spacing="10" BackgroundColor="Transparent" 
+                                                 VerticalOptions="FillAndExpand" Padding="5">
+                                            <Image Source="{Binding Image}" VerticalOptions="Start" HeightRequest="20"
+                                                   WidthRequest="20" HorizontalOptions="Start">
+                                            </Image>
+                                            <Label FontFamily="FaktProBlond" StyleId="FaktProBlond"
+                                           Text="{Binding Heading}" TextColor="White" 
+                                    FontSize="25" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"></Label>
+
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </Grid>
+                        </list:FlowViewCell>
+                    </DataTemplate>
+                </list:FlowListView.FlowColumnTemplate>
+            </list:FlowListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

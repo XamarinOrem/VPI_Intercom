@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VPIIntercom.Views.OnGoingCall">
+
+    <ScrollView>
+    <StackLayout x:Name="stack_layout" BackgroundColor="Transparent" Spacing="10" HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand">
+        <Label FontFamily="FaktProBlond" StyleId="FaktProBlond" FontSize="30" HorizontalTextAlignment="Center"
+                       TextColor="#dbdadb" Text="Chamar Receber de" Margin="0,30,0,0"></Label>
+
+        <Label FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold" FontSize="40" HorizontalTextAlignment="Start" Margin="0,30,0,0"
+                       TextColor="White" x:Name="receiveCallingNumber" 
+               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+            <Label x:Name="durationLbl" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0"
+                   VerticalOptions="Center" FontSize="Large" TextColor="White"
+                   FontFamily="FaktProBlond" StyleId="FaktProBlond"/>
+
+        <Grid Margin="30,20,10,30" BackgroundColor="Transparent" x:Name="callingGrid" VerticalOptions="EndAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                     <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Image HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"
+                   HeightRequest="80" WidthRequest="80" Source="phone_receive.png"
+                   Grid.Row="0" Grid.Column="0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Phone_Call_Receive"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
+                   HeightRequest="80" WidthRequest="80" Source="phone_end.png"
+                   Grid.Row="0" Grid.Column="1">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Phone_Call_End_Post"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                
+            <!--<Image Source="ic_button_red.png" HorizontalOptions="Center" Grid.Column="0" Grid.Row="0"></Image>
+
+            <Button Text="ENCERRAR CHAMADA" HorizontalOptions="Center" FontSize="15" BackgroundColor="Transparent" BorderRadius="20"
+                       TextColor="White" FontFamily="FaktProSemiBold" StyleId="FaktProSemiBold">
+            </Button>-->
+        </Grid>
+
+            <StackLayout Padding="10,20,10,20" Margin="0" BackgroundColor="#D00800" HorizontalOptions="FillAndExpand"
+                         VerticalOptions="EndAndExpand" IsVisible="false" x:Name="endCallLayout">
+
+                <Image Source="end_call.png" HorizontalOptions="Center"
+                       VerticalOptions="Center" HeightRequest="40" WidthRequest="40"/>
+
+                <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Phone_Call_End"></TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+    </StackLayout>
+
+        </ScrollView>
+</ContentPage>

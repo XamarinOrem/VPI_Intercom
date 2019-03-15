@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{CD62142B-E30B-4023-82BD-A012D6F4F4F4}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>VPIIntercom</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AddConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ApartmentListDark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\DialingKeyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NoInternetPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\OnGoingCall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LoaderPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ShowMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ShowVideoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)LinphoneWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AddConfiguration.xaml.cs">
+      <DependentUpon>AddConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ApartmentListDark.xaml.cs">
+      <DependentUpon>ApartmentListDark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\DialingKeyboard.xaml.cs">
+      <DependentUpon>DialingKeyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NoInternetPopup.xaml.cs">
+      <DependentUpon>NoInternetPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\OnGoingCall.xaml.cs">
+      <DependentUpon>OnGoingCall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomControls\CustomLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Database.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GateListModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repo\CommonLIb.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SaveLoginResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GetLoginResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LoaderPopup.xaml.cs">
+      <DependentUpon>LoaderPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ShowMessage.xaml.cs">
+      <DependentUpon>ShowMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Repo\HttpClientBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GetExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repo\ApiUrl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LinphoneManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ShowVideoPage.xaml.cs">
+      <DependentUpon>ShowVideoPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+  </ItemGroup>
+</Project>
